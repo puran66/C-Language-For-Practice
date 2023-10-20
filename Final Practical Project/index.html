@@ -14,7 +14,8 @@
             gap: 30px;
             text-align: center;
         }
-        .data{
+
+        .data {
             display: flex;
             flex-direction: column;
             gap: 30px;
@@ -25,7 +26,8 @@
             border: 2px solid black;
             padding: 20px;
         }
-        button{
+
+        button {
             width: 200PX;
             height: 30Px;
             margin-top: 30px;
@@ -45,6 +47,7 @@
     let Conatiner = document.querySelector("#data");
     let text;
 
+    //****************DATA Fetch **************//
     async function Data() {
         if (pass == 0) {
             pass++;
@@ -57,12 +60,13 @@
 
             let value = JSON.parse(localStorage.getItem("details"))
 
-            // console.log(value);
+            console.log(value);
 
             text = value;
         }
     }
 
+    //****************Get Data **************//
     async function Get() {
         await Data();
         console.log(text);
@@ -77,11 +81,12 @@
 
     }
 
-    function remove(){
-        if(pass == 1){
+    //****************DATA Remove **************//
+    function remove() {
+        if (pass == 1) {
             console.log("remove");
             localStorage.removeItem("details");
-            
+
             Conatiner.innerHTML = ""
         }
     }
